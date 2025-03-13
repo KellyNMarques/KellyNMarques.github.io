@@ -1,0 +1,206 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* 🎨 Paleta de Cores */
+:root {
+    --fundo-principal: #E6DFF1;  /* Lilás suave */
+    --cor-destaque: #D295BF;  /* Rosa queimado */
+    --fundo-card: #F8E1E7;  /* Rosa claro */
+    --cor-texto: #843B62;  /* Vinho */
+    --branco: #FFF;
+}
+
+/* 🌍 Estilização Geral */
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: var(--fundo-principal);
+    color: var(--cor-texto);
+}
+
+/* 🎀 Cabeçalho */
+header {
+    width: 100%;
+    background-color: var(--cor-destaque);
+    padding: 15px 0;
+    text-align: center;
+}
+
+/* 🔥 Ajuste do tamanho da logo */
+.branch img {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 🗂 Navegação */
+.menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.menu .menu-link {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--branco);
+    text-transform: uppercase;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.menu .menu-link:hover {
+    color: var(--fundo-card);
+}
+
+/* 📷 Sobre Mim */
+.super-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.super-card-img img {
+    width: 180px;
+    border-radius: 50%;
+    border: 4px solid var(--cor-destaque);
+}
+
+/* 📄 Texto */
+.super-card-text {
+    max-width: 500px;
+    text-align: justify;
+    font-size: 1.1em;
+    line-height: 1.6em;
+}
+
+.super-card-text p::before {
+    content: "📌 ";
+    font-size: 1.2em;
+    color: var(--cor-texto);
+}
+
+/* 🔹 Container dos cartões do portfólio */
+.cards-container {
+    display: flex;
+    justify-content: center; /* Centraliza os cartões */
+    align-items: stretch; /* Mantém altura igual */
+    flex-wrap: nowrap; /* Mantém os cartões na mesma linha */
+    gap: 30px; /* Espaçamento entre cartões */
+    max-width: 1100px; /* Mantém alinhamento */
+    margin: 50px auto; /* Centraliza */
+    padding: 0 20px;
+    overflow-x: auto; /* Permite rolagem horizontal se necessário */
+}
+
+/* 🔹 Estilização dos cartões */
+.card {
+    background-color: var(--branco);
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    flex: 1 1 300px; /* Mantém tamanho uniforme */
+    min-height: 400px;
+    max-width: 320px; /* Mantém um limite */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 🔹 Efeito ao passar o mouse */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Ajuste das imagens dentro dos cartões */
+.card-img {
+    display: flex;
+    justify-content: center;
+}
+
+.card-img .img-body img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+}
+
+/* 🔹 Texto dentro do cartão */
+.card-body p {
+    font-size: 1em;
+    color: var(--cor-texto);
+    margin: 15px 0;
+    padding: 0 15px;
+}
+
+/* 🔹 Botão "Saiba Mais" */
+.card-button {
+    margin-top: auto; /* Empurra para o final */
+    text-align: center;
+    padding-top: 15px;
+}
+
+.card-button a {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #141A28;
+    color: var(--branco);
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 0 0 12px 12px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.card-button a:hover {
+    background-color: #333B7E;
+}
+
+/* 🔹 Responsividade */
+@media (max-width: 1024px) {
+    .cards-container {
+        flex-wrap: wrap; /* Permite quebra */
+    }
+
+    .card {
+        max-width: 45%; /* Mantém dois por linha */
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column; /* Empilha em telas menores */
+        align-items: center;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+}
+
+/* Ajustes de espaçamento */
+.super-card-img h2 {
+    margin-top: 40px;
+}
+
+.super-card-text {
+    margin-left: 40px;
+}
+
+.super-card-text p + p {
+    margin-top: 1em;
+}
